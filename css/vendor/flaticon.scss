@@ -1,0 +1,37 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?e8a8fe9a36efae27071df7bf426225a3") format("truetype"),
+url("./flaticon.woff?e8a8fe9a36efae27071df7bf426225a3") format("woff"),
+url("./flaticon.woff2?e8a8fe9a36efae27071df7bf426225a3") format("woff2"),
+url("./flaticon.eot?e8a8fe9a36efae27071df7bf426225a3#iefix") format("embedded-opentype"),
+url("./flaticon.svg?e8a8fe9a36efae27071df7bf426225a3#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "right-arrow": "\f101",
+    "add": "\f102",
+    "information": "\f103",
+);
+
+.flaticon-right-arrow:before {
+    content: map-get($flaticon-map, "right-arrow");
+}
+.flaticon-add:before {
+    content: map-get($flaticon-map, "add");
+}
+.flaticon-information:before {
+    content: map-get($flaticon-map, "information");
+}

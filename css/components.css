@@ -1,0 +1,135 @@
+.nav {
+  position: fixed;
+  width: 200px;
+  background-color: #fff;
+  height: 100%;
+  z-index: 999;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 80%;
+
+  background-color: #f8f9fc;
+  margin: auto;
+
+  box-shadow: 4px 4px 10px #d8d5d5;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.button-container-ul {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-right: 0;
+  justify-content: flex-end;
+  margin: 0;
+  margin-top: -30px;
+
+  list-style-type: none;
+  padding: 0;
+  z-index: 100;
+}
+
+.decline-button {
+  transform: scaleX(-1);
+  color: red;
+}
+.add-button {
+  color: green;
+}
+.details-button {
+  color: rgb(28, 201, 201);
+}
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #5b66dc;
+}
+
+li {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  box-shadow: 4px 4px 10px #d8d5d5;
+  border: 1px solid #5b66dc;
+  cursor: pointer;
+}
+.title {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 24px;
+  padding: 10px 0;
+  color: #5b66dc;
+  border: 2px solid #5b66dc;
+}
+
+.description {
+  text-align: center;
+  margin: 0px auto;
+  font-size: 20px;
+  color: #9c9b9b;
+}
+
+.description::before {
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: #313888;
+  content: "";
+  margin: 10px auto;
+}
+
+.feedbackClickNext {
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, 0);
+  transform: rotate(-20deg);
+
+  border: 4px solid red;
+  padding: 10px;
+  font-size: 100px;
+}
+
+.feedbackClickAdd {
+  color: green;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  transform: translate(-50%, 0);
+  transform: rotate(20deg);
+  border: 4px solid green;
+  padding: 10px;
+  font-size: 100px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(231, 220, 220, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(174, 184, 183, 0.5);
+}

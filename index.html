@@ -9,13 +9,40 @@
       content="width=device-width, initial-scale=1.0,maximum-scale=1.4"
     />
     <meta name="Kevin Nguyen" content="Swipegestions" />
-
+    <link rel="stylesheet" type="text/css" href="/css/vendor/flaticon.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
   </head>
 
   <body>
     <!------------------Center Card------------------------->
 
+    <div class="container">
+      <nav class="nav">nav content</nav>
+      <div class="card-container">
+        <div class="top-content">
+          <div class="image-container"></div>
+          <div class="feedbackClickNext hidden">Nope!</div>
+          <div class="feedbackClickAdd hidden">Add!</div>
+        </div>
+        <div class="button-container">
+          <ul class="button-container-ul">
+            <li class="decline-button"><i class="flaticon-right-arrow"></i></li>
+            <div class="details-container"></div>
+            <li class="add-button"><i class="flaticon-add"></i></li>
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <div class="title"></div>
+
+          <div class="description"></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
