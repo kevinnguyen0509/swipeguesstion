@@ -2,6 +2,12 @@
   position: relative;
   height: 70%;
 }
+.heading {
+  background-color: #5b66dc;
+  height: 4%;
+  padding: 2%;
+  box-shadow: 0px 5px 10px #d8d5d5;
+}
 
 .bottom-container {
   position: relative;
@@ -29,4 +35,20 @@
 
 .container {
   display: flex;
+}
+
+.recently-added-container {
+  list-style-type: none;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 250px;
+
+  height: 100%;
+  z-index: 999;
+  background-color: #ffff;
+  box-shadow: 5px 0px 10px #d8d5d5;
 }

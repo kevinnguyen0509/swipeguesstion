@@ -2,11 +2,11 @@ $flaticon-font: "flaticon";
 
 @font-face {
     font-family: $flaticon-font;
-    src: url("./flaticon.ttf?e8a8fe9a36efae27071df7bf426225a3") format("truetype"),
-url("./flaticon.woff?e8a8fe9a36efae27071df7bf426225a3") format("woff"),
-url("./flaticon.woff2?e8a8fe9a36efae27071df7bf426225a3") format("woff2"),
-url("./flaticon.eot?e8a8fe9a36efae27071df7bf426225a3#iefix") format("embedded-opentype"),
-url("./flaticon.svg?e8a8fe9a36efae27071df7bf426225a3#flaticon") format("svg");
+    src: url("./flaticon.ttf?a396fb1fd305842bc1c5e0a578007ec3") format("truetype"),
+url("./flaticon.woff?a396fb1fd305842bc1c5e0a578007ec3") format("woff"),
+url("./flaticon.woff2?a396fb1fd305842bc1c5e0a578007ec3") format("woff2"),
+url("./flaticon.eot?a396fb1fd305842bc1c5e0a578007ec3#iefix") format("embedded-opentype"),
+url("./flaticon.svg?a396fb1fd305842bc1c5e0a578007ec3#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -21,17 +21,45 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 }
 
 $flaticon-map: (
-    "right-arrow": "\f101",
-    "add": "\f102",
+    "cancel": "\f101",
+    "recipe-book": "\f102",
     "information": "\f103",
+    "add": "\f104",
+    "right-arrow": "\f105",
+    "browsing": "\f106",
+    "relax": "\f107",
+    "car": "\f108",
+    "hiking": "\f109",
+    "fork": "\f10a",
 );
 
-.flaticon-right-arrow:before {
-    content: map-get($flaticon-map, "right-arrow");
+.flaticon-cancel:before {
+    content: map-get($flaticon-map, "cancel");
+}
+.flaticon-recipe-book:before {
+    content: map-get($flaticon-map, "recipe-book");
+}
+.flaticon-information:before {
+    content: map-get($flaticon-map, "information");
 }
 .flaticon-add:before {
     content: map-get($flaticon-map, "add");
 }
-.flaticon-information:before {
-    content: map-get($flaticon-map, "information");
+.flaticon-right-arrow:before {
+    content: map-get($flaticon-map, "right-arrow");
+}
+.flaticon-browsing:before {
+    content: map-get($flaticon-map, "browsing");
+}
+.flaticon-relax:before {
+    content: map-get($flaticon-map, "relax");
+}
+.flaticon-car:before {
+    content: map-get($flaticon-map, "car");
+}
+.flaticon-hiking:before {
+    content: map-get($flaticon-map, "hiking");
+}
+.flaticon-fork:before {
+    content: map-get($flaticon-map, "fork");
 }

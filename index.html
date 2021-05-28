@@ -19,7 +19,48 @@
     <!------------------Center Card------------------------->
 
     <div class="container">
-      <nav class="nav">nav content</nav>
+      <nav class="nav">
+        <div class="heading">
+          <div class="search-container">
+            <input
+              type="text"
+              class="search"
+              placeholder="Search Doesn't Work yet"
+            />
+          </div>
+        </div>
+
+        <ul class="nav-list-container">
+          <li class="boards allCategory active">
+            All Categories <i class="flaticon-browsing nav-icon"></i>
+          </li>
+          <li class="boards decor">
+            Home/Decor <i class="flaticon-relax nav-icon"></i>
+          </li>
+          <li class="boards daytrips">
+            Daytrips <i class="flaticon-car nav-icon"></i>
+          </li>
+          <li class="boards recipes">
+            Recipes
+            <i class="flaticon-recipe-book nav-icon"></i>
+          </li>
+          <li class="boards restaurants">
+            Restaurants
+            <i class="flaticon-fork nav-icon"></i>
+          </li>
+          <li class="boards hiking">
+            Hikes
+            <i class="flaticon-hiking nav-icon"></i>
+          </li>
+        </ul>
+
+        <div class="recently-added-container">
+          <h3>Recently Added</h3>
+          <ul class="recently-Added-List">
+            <li class="recently-added-img"></li>
+          </ul>
+        </div>
+      </nav>
       <div class="card-container">
         <div class="top-content">
           <div class="image-container"></div>
@@ -44,5 +85,6 @@
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/nav.js"></script>
   </body>
 </html>

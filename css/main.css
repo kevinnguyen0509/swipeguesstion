@@ -12,6 +12,10 @@ body {
   display: none;
 }
 
+.active {
+  background-color: #e0e1ee;
+}
+
 .container {
   height: 100%;
 }

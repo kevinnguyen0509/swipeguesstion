@@ -6,14 +6,40 @@ const addAnimationText = document.querySelector(".feedbackClickAdd");
 const nextAnimationText = document.querySelector(".feedbackClickNext");
 const title = document.querySelector(".title");
 const description = document.querySelector(".description");
+let decor = document.querySelector(".decor");
+let daytrips = document.querySelector(".daytrips");
+let recipes = document.querySelector(".recipes");
+let restaurants = document.querySelector(".restaurants");
+let allCategory = document.querySelector(".allCategory");
+let hikes = document.querySelector(".hiking");
+let recentlyAddedUL = document.querySelector(".recently-Added-List");
+let recentlyAddedImg = document.querySelector(".recently-added-img");
 let currentIndex = 0;
-const yesArray = ["Add!", "Yup!", "Yeah!", "Awesome!", "cool!", "Another!"];
-const nextArray = ["Nope!", "No!", "Next!", "eh..", "Almost!", "Never"];
+let adventuresArray = [];
+const yesArray = [
+  "Add!",
+  "Yup!",
+  "Yeah!",
+  "Awesome!",
+  "cool!",
+  "Another!",
+  "Nice!",
+];
+const nextArray = [
+  "Nope!",
+  "No!",
+  "Next!",
+  "eh..",
+  "Almost!",
+  "Never..",
+  "Close!",
+];
 
 getAdventures().then((data) => {
-  const adventuresArray = shuffle(data.adventures);
+  adventuresArray = shuffle(data.adventures);
+  //console.log(data);
 
-  topSideContainer.innerHTML = `<img class="card-image" src="${adventuresArray[0].image}" alt="${adventuresArray[0].title}">`;
+  topSideContainer.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank"><img class="card-image" src="${adventuresArray[0].image}" alt="${adventuresArray[0].title}"> </a>`;
   title.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank">${adventuresArray[currentIndex].title}</a
   >`;
   description.innerHTML = `${adventuresArray[currentIndex].description}`;
@@ -27,7 +53,7 @@ getAdventures().then((data) => {
 
       $(addAnimationText).effect("puff", 1000);
       currentIndex++;
-      topSideContainer.innerHTML = `<img class="card-image" src="${adventuresArray[currentIndex].image}" alt="${adventuresArray[currentIndex].title}">`;
+      topSideContainer.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank"><img class="card-image" src="${adventuresArray[currentIndex].image}" alt="${adventuresArray[currentIndex].title}"> </a>`;
 
       title.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank">${adventuresArray[currentIndex].title}</a
       >`;
@@ -40,12 +66,24 @@ getAdventures().then((data) => {
         distance: 500,
         times: 1,
       });
+
+      recentlyAddedUL.insertAdjacentHTML(
+        "afterbegin",
+        `<li class="recently-added-img">
+          <a href="${adventuresArray[currentIndex - 1].url}" target="_blank">
+            <img
+              src="${adventuresArray[currentIndex - 1].image}"
+              alt="${adventuresArray[currentIndex - 1].title}"
+            />
+          </a>
+        </li>`
+      );
     } else if (e.keyCode == "37") {
       //left
       nextAnimationText.innerHTML = nextArray[getRandomInt(nextArray.length)];
       $(nextAnimationText).effect("puff", 1000);
       currentIndex++;
-      topSideContainer.innerHTML = `<img class="card-image" src="${adventuresArray[currentIndex].image}" alt="${adventuresArray[currentIndex].title}">`;
+      topSideContainer.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank"><img class="card-image" src="${adventuresArray[currentIndex].image}" alt="${adventuresArray[currentIndex].title}"> </a>`;
 
       title.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank">${adventuresArray[currentIndex].title}</a
       >`;
@@ -59,14 +97,13 @@ getAdventures().then((data) => {
         times: 1,
       });
     }
-    0;
   });
 
   addButton.addEventListener("click", function () {
     addAnimationText.innerHTML = yesArray[getRandomInt(yesArray.length)];
     $(addAnimationText).effect("puff", 1000);
     currentIndex++;
-    topSideContainer.innerHTML = `<img class="card-image" src="${adventuresArray[currentIndex].image}" alt="${adventuresArray[currentIndex].title}">`;
+    topSideContainer.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank"><img class="card-image" src="${adventuresArray[currentIndex].image}" alt="${adventuresArray[currentIndex].title}"> </a>`;
 
     title.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank">${adventuresArray[currentIndex].title}</a
     >`;
@@ -79,6 +116,18 @@ getAdventures().then((data) => {
       distance: 500,
       times: 1,
     });
+
+    recentlyAddedUL.insertAdjacentHTML(
+      "afterbegin",
+      `<li class="recently-added-img">
+        <a href="${adventuresArray[currentIndex - 1].url}" target="_blank">
+          <img
+            src="${adventuresArray[currentIndex - 1].image}"
+            alt="${adventuresArray[currentIndex - 1].title}"
+          />
+        </a>
+      </li>`
+    );
   });
 
   /***********decline********* */
@@ -86,7 +135,7 @@ getAdventures().then((data) => {
     nextAnimationText.innerHTML = nextArray[getRandomInt(nextArray.length)];
     $(nextAnimationText).effect("puff", 1000);
     currentIndex++;
-    topSideContainer.innerHTML = `<img class="card-image" src="${adventuresArray[currentIndex].image}" alt="${adventuresArray[currentIndex].title}">`;
+    topSideContainer.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank"><img class="card-image" src="${adventuresArray[currentIndex].image}" alt="${adventuresArray[currentIndex].title}"> </a>`;
 
     title.innerHTML = `<a href="${adventuresArray[currentIndex].url}" target="_blank">${adventuresArray[currentIndex].title}</a
     >`;
@@ -106,6 +155,12 @@ async function getAdventures() {
   const adventuresResponse = await fetch(
     "http://127.0.0.1:3000/api/v1/adventures"
   );
+  const adventuresdata = adventuresResponse.json();
+  return adventuresdata;
+}
+
+async function getAdventuresUrl(url) {
+  const adventuresResponse = await fetch(url);
   const adventuresdata = adventuresResponse.json();
   return adventuresdata;
 }
